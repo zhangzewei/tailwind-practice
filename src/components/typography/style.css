@@ -1,0 +1,35 @@
+.base-font {
+    @apply block antialiased tracking-normal font-sans font-semibold;
+}
+
+.heading1 {
+    @apply text-5xl leading-tight;
+}
+
+.heading2 {
+    @apply text-4xl leading-[1.3];
+}
+
+.heading3 {
+    @apply text-3xl leading-snug;
+}
+
+.heading4 {
+    @apply text-2xl leading-snug;
+}
+
+.heading5 {
+    @apply text-xl leading-snug;
+}
+
+.heading6 {
+    @apply text-lg leading-relaxed;
+}
+
+.lead {
+    @apply text-base font-normal leading-relaxed;
+}
+
+.paragraph {
+    @apply text-sm font-normal leading-relaxed;
+}

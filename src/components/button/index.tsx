@@ -1,7 +1,10 @@
 import { ButtonHTMLAttributes } from "react"
 
+type ButtonVariant =
+    | 'filled'
+    | 'outlined'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    variant: 'filled' | 'outlined'
+    variant: ButtonVariant;
 }
 
 export default function Button(props: ButtonProps) {

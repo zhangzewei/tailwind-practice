@@ -1,29 +1,27 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, createElement } from "react";
+import './style.css';
 
 interface TypographyProps extends PropsWithChildren {
     className?: string;
-    variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'lead' | 'paragraph'
-}
-
-interface TextProps extends PropsWithChildren {
-    className?: string;
+    variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'lead' | 'paragraph';
 }
 
 export default function Typography(props: TypographyProps) {
     const { variant, children, className } = props;
-    const baseClassNames = 'block antialiased tracking-normal font-sans font-semibold';
-    const typographies = {
-        h1: (p: TextProps) => <h1 className={`${baseClassNames} text-5xl leading-tight ${p.className}`}>{p.children}</h1>,
-        h2: (p: TextProps) => <h2 className={`${baseClassNames} text-4xl leading-[1.3]  ${p.className}`}>{p.children}</h2>,
-        h3: (p: TextProps) => <h3 className={`${baseClassNames} text-3xl leading-snug ${p.className}`}>{p.children}</h3>,
-        h4: (p: TextProps) => <h4 className={`${baseClassNames} text-2xl leading-snug ${p.className}`}>{p.children}</h4>,
-        h5: (p: TextProps) => <h5 className={`${baseClassNames} text-xl leading-snug ${p.className}`}>{p.children}</h5>,
-        h6: (p: TextProps) => <h6 className={`${baseClassNames} text-lg leading-relaxed ${p.className}`}>{p.children}</h6>,
-        lead: (p: TextProps) => <p className={`${baseClassNames} text-base font-normal leading-relaxed ${p.className}`}>{p.children}</p>,
-        paragraph: (p: TextProps) => <p className={`${baseClassNames} text-sm font-normal leading-relaxed ${p.className}`}>{p.children}</p>,
+    const headingElements = ['h1' , 'h2' , 'h3' , 'h4' , 'h5' , 'h6'];
+    const typographiesClassName = {
+        h1: 'heading1',
+        h2: 'heading2',
+        h3: 'heading3',
+        h4: 'heading4',
+        h5: 'heading5',
+        h6: 'heading6',
+        lead: 'lead',
+        paragraph: 'paragraph'
     }
-    return typographies[variant]({
-        className,
+    return createElement(
+        headingElements.includes(variant) ? variant : 'p',
+        { className: `base-font ${typographiesClassName[variant]} ${className}` },
         children
-    });
+    );
 }
