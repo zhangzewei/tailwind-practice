@@ -5,8 +5,8 @@ interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export default function Radio(props: RadioProps) {
-    const { label, name, value, onChange, checked, className } = props;
-    return <label className=" relative" htmlFor={label}>
+    const { label, name, value, checked, className, onChange } = props;
+    return <label className="relative cursor-pointer" htmlFor={label}>
         <input
             className="sr-only peer"
             type="radio"

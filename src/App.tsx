@@ -3,6 +3,7 @@ import Radio from "./components/radio"
 import Button from "./components/button";
 import Card from "./components/card";
 import Typography from "./components/typography";
+import { HeartIcon } from "./components/icons";
 
 function App() {
   const sizeList = [
@@ -48,13 +49,7 @@ function App() {
               <Button variant="outlined"> Add to bag</Button>
             </div>
             <Button variant="outlined" className="px-2.5">
-              <svg width="20" height="20" fill="currentColor" aria-hidden="true">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                />
-              </svg>
+              <HeartIcon size={24} />
             </Button>
           </div>
 
